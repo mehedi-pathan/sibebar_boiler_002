@@ -1,0 +1,216 @@
+.main_container {
+  display: flex;
+  main {
+    padding: 20px;
+  }
+  .title {
+    font-size: 30px;
+  }
+
+  .sidebar {
+    background: rgb(52, 156, 228);
+    color: #fff;
+    height: 100vh;
+    .routes {
+      color: #fff;
+    }
+
+    .top_section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px;
+      .company_logo {
+        width: 60px;
+        height: 60px;
+
+        .main_img {
+          width: 100%;
+          height: 100%;
+          transform: rotate(180deg);
+        }
+      }
+      .main_text {
+        font-size: 25px;
+        line-height: 0;
+        span {
+          color: #1c4c74;
+        }
+      }
+      .bars {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        font-size: 25px;
+        cursor: pointer;
+      }
+    }
+
+    .search {
+      display: flex;
+      align-items: center;
+      margin: 10px 0px;
+      height: 40px;
+      padding: 7px 15px;
+      .search_icon {
+        display: flex;
+        align-items: center;
+        font-size: 30px;
+        cursor: pointer;
+        color: rgba(255, 255, 255, 0.8);
+      }
+      input {
+        outline: none;
+        border: none;
+        margin-left: 10px;
+        border-radius: 5px;
+        background: rgb(238, 238, 238);
+        &:focus,
+        &:active {
+          outline: none;
+        }
+      }
+    }
+
+    .routes {
+      .navLink {
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        align-content: center;
+        justify-content: flex-start;
+        position: relative;
+        color: #fff;
+        gap: 10px;
+        padding: 10px 15px;
+        text-decoration: none;
+        outline: none;
+        transition: 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+
+        .icon {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 25px;
+          color: rgba(255, 255, 255, 0.8);
+          transition: 0.2s ease-in;
+        }
+        .link_text {
+          white-space: nowrap;
+          font-size: 17px;
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 4px;
+          height: 0;
+          background-color: transparent;
+          border-radius: 10px 0 0 10px;
+          transition: 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+        }
+
+        &:hover,
+        &:active {
+          color: rgb(53, 69, 81);
+          background-color: rgba($color: #000000, $alpha: 0.1);
+          &::before {
+            height: 100%;
+            background-color: #fff;
+          }
+        }
+        &:hover,
+        &:active,
+        &:focus {
+          .icon {
+            color: rgb(53, 69, 81);
+            transform: scale(0.9);
+            transition: 0.2s ease-in;
+            box-shadow: rgba(18, 163, 252, 0.1) 0px 3px 12px;
+          }
+        }
+      }
+
+      .active {
+        .icon {
+          color: rgb(53, 69, 81);
+        }
+        color: rgb(53, 69, 81);
+        background-color: rgba($color: #000000, $alpha: 0.1);
+
+        &::before {
+          height: 100%;
+          background-color: #fff;
+        }
+      }
+    }
+
+    //for submenu style define here
+    .menu {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #fff;
+      gap: 10px;
+      padding: 10px 15px;
+      cursor: pointer;
+      .menu_item {
+        display: flex;
+        gap: 10px;
+
+        .icon {
+          font-size: 25px;
+          color: rgba(255, 255, 255, 0.8);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+      .subMenu_extend_icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 4px;
+        height: 0;
+        background-color: transparent;
+        border-radius: 10px 0 0 10px;
+        transition: 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+      }
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: rgb(53, 69, 81);
+        background-color: rgba($color: #000000, $alpha: 0.1);
+        .icon {
+          color: rgb(53, 69, 81);
+          transform: scale(0.9);
+          transition: 0.2s ease-in;
+          box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+        }
+        &::before {
+          height: 100%;
+          background-color: #fff;
+        }
+      }
+    }
+
+    .menu_container {
+      .navLink {
+        padding-left: 20px;
+        border-bottom: #fff 0.5px solid;
+      }
+    }
+  }
+}
